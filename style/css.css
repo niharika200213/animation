@@ -6,5 +6,14 @@ body{background: radial-gradient(rgb(3, 39, 53),black);
     height: 100%;
     overflow: hidden;}
 
-#moon{margin-top: -5%;margin-left: 2%;}
-#cloud2{margin-top: -5%;}
+#moon{padding-top: 20px;padding-left: 20px;z-index: 1;margin: 0;}
+
+#cloud1{position: absolute;top: 100px;left: 100px;z-index: 2;}
+
+#cloud2{position: absolute;top: 200px;left: 700px;z-index: 2;}
+
+#ghost1{position: absolute;top: 400px;left: 300px;z-index: 3;}
+
+#ghost2{position: absolute;top: 500px;left: 700px;z-index: 3;}
+
+#ghost3{position: absolute;top: 200px;left: 1000px;z-index: 3;}
