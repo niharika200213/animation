@@ -7,7 +7,9 @@ function animation()
     setTimeout(animateGhost2,100);
     setTimeout(animateGhost3,100);
     setTimeout(stars,100);
+    setTimeout(bg,100);
 }
+
 function animateCloud1()
 {
     const cloud1 = document.getElementById("cloud1");   
@@ -116,11 +118,10 @@ function animateGhost3()
 function stars()
 {
     let i=0;let j=0;
-    var id = setInterval(animate, 1);
-    function animate()
+    for(var m=0;m<100;m++)
     {
         var svg=document.getElementById("star");
-        var circle=document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        let circle=document.createElementNS("http://www.w3.org/2000/svg", "circle");
         circle.setAttribute("cx", i);
         circle.setAttribute("cy", j);
         circle.setAttribute("r",  1);
@@ -128,5 +129,23 @@ function stars()
         circle.setAttribute("stroke", "skyblue");                
         svg.appendChild(circle);
         i=Math.floor(Math.random()*window.innerWidth*10);j=Math.floor(Math.random()*window.innerHeight*10);
+    }
+}
+
+function bg()
+{
+    let count=0;
+    var id=setInterval(animate,70);
+    function animate()
+    {
+        const svg=document.getElementById("star");
+        var rect=svg.getBoundingClientRect();
+        var x=rect.top;
+        x++;
+        document.getElementById("star").style.top=x;
+        if(count<=70){stars();}
+        if(x%100==0)
+        {document.getElementById("star").style.top=0;}
+        count++;
     }
 }
