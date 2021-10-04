@@ -6,6 +6,7 @@ function animation()
     setTimeout(animateGhost1,100);
     setTimeout(animateGhost2,100);
     setTimeout(animateGhost3,100);
+    setTimeout(stars,100);
 }
 function animateCloud1()
 {
@@ -110,4 +111,22 @@ function animateGhost3()
         angle += .02;
         document.getElementById("ghost3").style.left=x+"px";
     }    
+}
+
+function stars()
+{
+    let i=0;let j=0;
+    var id = setInterval(animate, 1);
+    function animate()
+    {
+        var svg=document.getElementById("star");
+        var circle=document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("cx", i);
+        circle.setAttribute("cy", j);
+        circle.setAttribute("r",  1);
+        circle.setAttribute("fill", "white");
+        circle.setAttribute("stroke", "skyblue");                
+        svg.appendChild(circle);
+        i=Math.floor(Math.random()*window.innerWidth*10);j=Math.floor(Math.random()*window.innerHeight*10);
+    }
 }

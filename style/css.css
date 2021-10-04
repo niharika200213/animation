@@ -27,3 +27,5 @@ body{background: radial-gradient(rgb(3, 39, 53),black);
 #ghost2{position: absolute;top: 500px;left: 900px;z-index: 3;}
 
 #ghost3{position: absolute;top: 200px;left: 1100px;z-index: 3;}
+
+#star{width: 100%;height: 100%; position: absolute;top: 0;left: 0;}
