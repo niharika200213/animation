@@ -135,7 +135,7 @@ function stars()
 function bg()
 {
     let count=0;
-    var id=setInterval(animate,70);
+    var id=setInterval(animate,40);
     function animate()
     {
         const svg=document.getElementById("star");
