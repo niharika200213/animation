@@ -17,7 +17,7 @@ function animateCloud1()
     var y=rect.top;
     var x=rect.left;
     var angle=0;
-    var id = setInterval(animate, 4);
+    var id = setInterval(animate, 10);
     function animate(){
         if(x==-rect.width)
             x=window.innerWidth;
@@ -38,7 +38,7 @@ function animateCloud2()
     var y=rect.top;
     var x=rect.left;
     var angle=0;
-    var id = setInterval(animate, 1);
+    var id = setInterval(animate, 10);
     function animate(){
         if(x==window.innerWidth)
             x=-rect.width;
@@ -59,7 +59,7 @@ function animateCloud3()
     var y=rect.top;
     var x=rect.left;
     var angle=0;
-    var id = setInterval(animate, 1);
+    var id = setInterval(animate, 10);
     function animate(){
         if(x==-rect.width)
             x=window.innerWidth;
@@ -79,7 +79,7 @@ function animateGhost1()
     var rect=ghost1.getBoundingClientRect();
     var x=rect.left;
     var angle=0;
-    var id = setInterval(animate, 1);
+    var id = setInterval(animate, 10);
     function animate(){
         x=rect.left+Math.round(20 * Math.sin(angle));
         angle += .02;
@@ -93,7 +93,7 @@ function animateGhost2()
     var rect=ghost2.getBoundingClientRect();
     var x=rect.left;
     var angle=0;
-    var id = setInterval(animate, 1);
+    var id = setInterval(animate, 10);
     function animate(){
         x=rect.left+Math.round(20 * Math.sin(angle));
         angle += .02;
@@ -107,7 +107,7 @@ function animateGhost3()
     var rect=ghost3.getBoundingClientRect();
     var x=rect.left;
     var angle=0;
-    var id = setInterval(animate, 1);
+    var id = setInterval(animate, 10);
     function animate(){
         x=rect.left+Math.round(20 * Math.sin(angle));
         angle += .02;
@@ -118,7 +118,7 @@ function animateGhost3()
 function stars()
 {
     let i=0;let j=0;
-    for(var m=0;m<100;m++)
+    for(var m=0;m<10;m++)
     {
         var svg=document.getElementById("star");
         let circle=document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -128,7 +128,7 @@ function stars()
         circle.setAttribute("fill", "white");
         circle.setAttribute("stroke", "skyblue");                
         svg.appendChild(circle);
-        i=Math.floor(Math.random()*window.innerWidth*10);j=Math.floor(Math.random()*window.innerHeight*10);
+        i=Math.floor(Math.random()*window.innerWidth);j=Math.floor(Math.random()*window.innerHeight);
     }
 }
 
@@ -143,9 +143,9 @@ function bg()
         var x=rect.top;
         x++;
         document.getElementById("star").style.top=x;
-        if(count<=70){stars();}
-        if(x%100==0)
-        {document.getElementById("star").style.top=0;}
+        if(count<=8){stars();}
+        if(x==100)
+        {x--;document.getElementById("star").style.top=0;}
         count++;
     }
 }
