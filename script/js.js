@@ -1,5 +1,3 @@
-function animation()
-{
     setTimeout(animateCloud1,100);
     setTimeout(animateCloud2,100);
     setTimeout(animateCloud3,100);
@@ -8,7 +6,6 @@ function animation()
     setTimeout(animateGhost3,100);
     setTimeout(stars,100);
     setTimeout(bg,100);
-}
 
 function animateCloud1()
 {
